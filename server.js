@@ -164,6 +164,7 @@ io.on('connection', (socket) => {
   */
 
 const express = require('express');
+const cors=require('cors');
 const socket = require('socket.io');
 const { ExpressPeerServer } = require('peer');
 const groupCallHandler = require('./groupCallHandler');
@@ -171,7 +172,7 @@ const { v4: uuidv4 } = require('uuid');
 const PORT =process.env.PORT || 5000
 
 const app = express();
-
+app.use(cors);
 const server = app.listen(PORT, () => {
   console.log(`server is listening on port ${PORT}`);
   console.log(`http://localhost:${PORT}`);
