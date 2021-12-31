@@ -177,7 +177,7 @@ const server = app.listen(PORT, () => {
   console.log(`server is listening on port ${PORT}`);
   console.log(`http://localhost:${PORT}`);
 });
-
+const server=http.createServer(app);
 const peerServer = ExpressPeerServer(server, {
   debug: true
 });
